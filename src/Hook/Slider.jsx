@@ -10,7 +10,7 @@ const Slider = ({data}) => {
                     navigation
                     spaceBetween={20}
                     modules={[Navigation]}
-                    className="mySwiper space-x-10"
+                    className="mySwiper space-x-10 "
                     breakpoints={{
                       320: {
                         slidesPerView: 1,

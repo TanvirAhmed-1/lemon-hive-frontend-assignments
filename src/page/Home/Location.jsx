@@ -13,7 +13,7 @@ const Location = () => {
    console.log("data", data);
   return (
     <div className="">
-      <h1 className="text-">Location</h1>
+      <h1 className="text-xl text-white font-medium pb-4  pt-2">Location</h1>
       <div>
         <Slider data={data}></Slider>
       </div>

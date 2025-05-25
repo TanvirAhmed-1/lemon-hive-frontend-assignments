@@ -14,8 +14,8 @@ const MeetTheCast = () => {
     },[])
     console.log("image",data)
     return (
-        <div>
-            <h1 className="text-">Meet The Cast</h1>
+        <div className="8/12 mx-auto">
+            <h1 className="text-xl text-white font-medium pb-10">Meet The Cast</h1>
             <div>
              <ImageSlider data={data}></ImageSlider>
             </div>

@@ -13,8 +13,8 @@ const Episode = () => {
   // console.log("data", data);
   return (
     <div className="">
-      <h1 className="text-">Episodes</h1>
-      <div>
+      <h1 className="text-xl text-white font-medium pb-4  pt-10">Episodes</h1>
+      <div className="">
         <Slider data={data}></Slider>
       </div>
     </div>

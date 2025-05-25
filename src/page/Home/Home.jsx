@@ -3,11 +3,13 @@ import Hero from "./Hero";
 import Location from "./Location";
 import image from "../../assets/Hero Img/Spiral Element.png";
 import MeetTheCast from "./MeetTheCast";
+import App from "../../App";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Home = () => {
   return (
     <div>
-      <section>
+      <section className="">
         <Hero></Hero>
       </section>
 
@@ -17,16 +19,18 @@ const Home = () => {
         }}
         className=" bg-no-repeat bg-right overflow-hidden w-full min-h-screen"
       >
-        <section>
-         <MeetTheCast></MeetTheCast>
-        </section>
-
-        <section>
-          <Episode></Episode>
-        </section>
-        <section>
-          <Location></Location>
-        </section>
+        <div className="w-11/12 mx-auto">
+          <section>
+            <Episode></Episode>
+          </section>
+          <div className="flex justify-between items-center text-2xl py-5 text-blue-700 max-w-[1300px]">
+           <FaStar />
+           <FaStar />
+          </div>
+          <section>
+            <Location></Location>
+          </section>
+        </div>
       </div>
     </div>
   );

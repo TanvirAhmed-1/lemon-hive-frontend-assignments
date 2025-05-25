@@ -1,0 +1,10 @@
+.card{
+  --s: 20px; /* control the shape */
+  
+  line-height: 1.8; /* control the height */
+  padding-inline: .3em calc(var(--s) + .3em);
+  clip-path: polygon(0 0,calc(100% - var(--s)) 0,100% 100%, calc(100% - var(--s)) 100%,0 100%);
+  background: #64908A;
+  width: fit-content;                    /* bottom-left */
+
+}
