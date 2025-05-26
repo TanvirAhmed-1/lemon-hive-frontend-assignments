@@ -28,7 +28,7 @@ const CharacterDetails = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen relative"
+        className="hero min-h-screen relative pb-20"
         style={{
           backgroundImage: `url(${HeroImg})`,
         }}
@@ -39,107 +39,100 @@ const CharacterDetails = () => {
         </div>
 
         <div>
-          <div className="relative z-10 pt-60 flex  justify-center items-center gap-20">
+          <div className="relative z-10 pt-60 md:flex  justify-center items-center lg:gap-20 md:gap-10">
             <div>
-              <h1 className="text-3xl text-center mb-5 font-bold">
+              <h1 className="text-3xl text-center text-sky-500 mb-5 font-bold">
                 {data.name}
               </h1>
-              <div className="bg-gradient-to-r from-[#1a749b]  to-[#5db440] p-[3px] rounded-3xl shadow-xl">
-                <div className="bg-[#1e1f26] rounded-3xl p-8 text-white text-center w-80">
+              <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[3px] rounded-3xl w-full max-w-xs mx-auto">
+                <div className="bg-[#1e1f26] rounded-3xl p-4 sm:p-6 md:p-8 text-white text-center">
                   <img
                     src={data.image}
                     alt={data.name}
-                    className="mx-auto mb-4 w-full"
+                    className="mx-auto mb-4 w-full h-auto rounded-xl object-cover"
                   />
-
                 </div>
               </div>
             </div>
-            <div className="border h-96 bg-green-600 border-solid border-green-500"></div>
+            <div className="border hidden md:block md:h-96 lg:h-96 bg-green-600 border-solid border-green-500"></div>
             {/* right section */}
-
-            <div className="">
-              <div className="flex gap-5">
-                <div className="bg-gradient-to-r from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl h-full">
-                  <div className=" flex justify-start flex-col items-start bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-52">
-                    <div>
-                      <RiHeart2Fill className="text-4xl text-[#5db440]" />
-                    </div>
-                    <p className="text-sm text-gray-500">Status</p>
-                    <h1 className="text-white text-lg">{data.status}</h1>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl h-full">
-                  <div className=" flex gap-1 justify-start flex-col items-start bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-52">
-                    <div>
-                      <RiAndroidFill className="text-3xl text-[#5db440]" />
-                    </div>
-
-                    <p className="text-sm text-gray-500">Species</p>
-                    <h1 className="text-white text-lg">{data.gender}</h1>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r mb-6 from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl h-full">
-                  <div className=" flex justify-start flex-col items-start bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-52">
-                    <div>
-                      <CgGenderMale className="text-4xl text-[#5db440]" />
-                    </div>
-
-                    <p className="text-sm text-gray-500">Gender</p>
-                    <h1 className="text-white text-lg">{data.species}</h1>
-                  </div>
-                </div>
-              </div>
-
-              {/* secend column */}
-
-              <div className="bg-gradient-to-r from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl">
-                <div className="bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-full">
-                  <div>
-                    <IoEarthSharp className="text-4xl text-[#5db440]" />
-                  </div>
-
-                  <p className="text-sm text-start py-2 text-gray-500">
-                    Species
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <h1 className="text-white text-lg">{data.species}</h1>
-                    <MdOpenInNew className="text-xl text-white" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r my-4 from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl shadow-xl">
-                <div className="bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-full">
-                  <div>
-                    <MdAddLocationAlt className="text-4xl text-[#5db440]" />
-                  </div>
-
-                  <p className="text-sm text-start py-2 text-gray-500">
-                    location
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <h1 className="text-white text-lg">
-                      {data?.location?.name}
+            <div className="p-2">
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                {/* 1 */}
+                <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl h-full">
+                  <div className="flex gap-1 md:gap-y-2 md:py-6 flex-col items-start bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white lg:w-80 w-full">
+                    <RiHeart2Fill className="text-4xl lg:text-6xl text-[#5db440]" />
+                    <p className="text-sm md:text-xl text-gray-500">Status</p>
+                    <h1 className="text-white text-lg md:text-3xl font-medium">
+                      {data.status}
                     </h1>
-                    <MdOpenInNew className="text-xl text-white" />
+                  </div>
+                </div>
+
+                {/*  2 */}
+                <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl h-auto">
+                  <div className="flex flex-col md:gap-y-2 md:py-6 gap-1 items-start bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
+                    <RiAndroidFill className="text-4xl lg:text-6xl text-[#5db440]" />
+                    <p className="text-sm text-gray-500 md:text-xl">Species</p>
+                    <h1 className="text-white text-lg md:text-3xl">
+                      {data.gender}
+                    </h1>
+                  </div>
+                </div>
+
+                {/* 3 */}
+                <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl h-full">
+                  <div className="flex gap-1 md:gap-y-2 md:py-6 flex-col items-start bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
+                    <CgGenderMale className="text-4xl lg:text-6xl text-[#5db440]" />
+                    <p className="text-sm text-gray-500 md:text-xl">Gender</p>
+                    <h1 className="text-white text-lg md:text-3xl">
+                      {data.species}
+                    </h1>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-[#1a749b]  to-[#5db440] p-[2px] rounded-3xl shadow-xl">
-                <div className="bg-[#1e1f26] rounded-3xl p-4 text-white text-center w-full">
-                  <div>
-                    <FaBars className="text-4xl text-[#5db440]" />
+              {/* Section of right */}
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl">
+                  <div className="bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
+                    <IoEarthSharp className="text-4xl lg:text-6xl text-[#5db440]" />
+                    <p className="text-sm md:text-xl text-start py-2 text-gray-500">
+                      Origin
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <h1 className="text-white text-lg md:text-3xl">{data.species}</h1>
+                      <MdOpenInNew className="text-xl lg:text-6xl text-white" />
+                    </div>
                   </div>
+                </div>
+                <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl">
+                  <div className="bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
+                    <MdAddLocationAlt className="text-4xl text-[#5db440]" />
+                    <p className="text-sm md:text-xl text-start py-2 text-gray-500">
+                      Last Known Location
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <h1 className="text-white text-lg md:text-3xl">
+                        {data?.location?.name}
+                      </h1>
+                      <MdOpenInNew className="text-xl lg:text-6xl text-white" />
+                    </div>
+                  </div>
+                </div>
 
-                  <p className="text-sm  text-start my-2 text-gray-500">
-                    Episode ({data.episode.length})
-                  </p>
-                  <h1 className="text-white text-start text-lg">{data?.location?.name}</h1>
-                  
+                <div className="bg-gradient-to-r overflow-auto whitespace-pre from-[#1a749b] to-[#5db440] p-[2px] max-h-[300px]  rounded-xl md:rounded-3xl">
+                  <div className="bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
+                    <FaBars className="text-4xl text-[#5db440]" />
+                    <p className="text-xl md:text-xl py-5 text-start  text-gray-500">
+                      Episode ({data.episode.length})
+                    </p>
+                    <h1 className="text-white text-lg text-start">
+                      {data?.episode?.map((v, i) => (
+                        <li key={i}>{v}</li>
+                      ))}
+                    </h1>
+                  </div>
                 </div>
               </div>
             </div>

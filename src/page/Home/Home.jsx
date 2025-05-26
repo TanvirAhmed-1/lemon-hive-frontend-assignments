@@ -3,7 +3,6 @@ import Hero from "./Hero";
 import Location from "./Location";
 import image from "../../assets/Hero Img/Spiral Element.png";
 import MeetTheCast from "./MeetTheCast";
-import App from "../../App";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 
@@ -18,7 +17,7 @@ const Home = () => {
         style={{
           backgroundImage: `url(${image})`,
         }}
-        className=" bg-no-repeat bg-right overflow-hidden w-full min-h-screen"
+        className=" bg-no-repeat bg-right overflow-hidden w-full lg:min-h-screen lg:pb-0 pb-20"
       >
         <div className="w-11/12 mx-auto">
           <section>
@@ -31,7 +30,6 @@ const Home = () => {
           <section>
             <Location></Location>
           </section>
-          <App></App>
         </div>
       </div>
     </div>

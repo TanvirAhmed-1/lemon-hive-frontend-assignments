@@ -27,12 +27,14 @@ const AllCharacter = () => {
           <div className=" absolute top-14 left-1/2 transform -translate-x-1/2 z-10">
             <img src={Img2} className="w-72" alt="" srcset="" />
           </div>
-          <div className=" relative z-10 pt-60 grid grid-cols-4 gap-6 py-20">
+          
+          <div className=" relative z-10 pt-60 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 px-2 py-20">
+            <h1 className="text-xl font-semibold ml-2 absolute  top-[180px] text-sky-500">The Cast</h1>
             {data.map((v) => (
               <Link
                 to={`/Character/${v.id}`}
                 key={v.id}
-                className="p-4 w-auto rounded-lg border-2  border-green-300  rounded-br-[90px]  bg-[#1e1f26]  text-white"
+                className="p-4 w-auto rounded-lg border-2  border-green-300 rounded-br-[50px] lg:rounded-br-[90px]  bg-[#1e1f26]  text-white"
               >
                 <img
                   src={v.image}

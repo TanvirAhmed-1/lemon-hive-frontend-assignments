@@ -4,34 +4,29 @@
 
 
 
-/* 
-//box style */
+.swiper-button-prev:after, .swiper-button-next:after{
+
+  overflow: hidden;
+  padding: 2px;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+  margin-left: -90px; 
+
+  overflow: hidden;
+  padding: 2px;
+} 
 
 
-/* .card_style {
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 50px;
-  border-bottom-right-radius: 30px !important;
-  border-image: linear-gradient(to right, #1a749b, #5db440) 1;
-} */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 8px; /* Shrinks default arrow icon */
+}
 
 
 
 
-.swiper-button-next, .swiper-button-prev {
-          width: 10px;
-            color: white;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-          .swiper-button-next {
-            right: 0;
-          }
-          .swiper-button-prev {
-            left: 0;
-          }
-
+          
+/* text shadow */
 .text_style{
   text-shadow: 5px 5px 40px;
 }
