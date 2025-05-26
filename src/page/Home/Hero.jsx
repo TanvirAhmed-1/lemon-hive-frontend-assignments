@@ -40,11 +40,11 @@ const Hero = () => {
                   <span className=" text-[#2fe0b8]">&</span>{" "}
                   <span className="absolute md:top-[15px] md:right-0 right-3  h-2 w-16 rounded-xl border-white bg-gradient-to-r from-[#7cf535] to-[#2bdfbc]"></span>
                 </div>
-                <div className="absolute top-[-110px] left-[-170px] md:-left-[90px] opacity-60 ">
+                <div className="absolute top-[-110px] left-[-170px] md:-left-[90px] lg:-left-[190px] opacity-60 ">
                   <img src={HeroImg4} className="w-full md:w-80" alt="" srcset="" />
                 </div>
               </div>
-              <div className="absolute md:top-[40%] lg:right-[-290px] lg:h-44 lg:w-72 w-28 top-[90%] h-16 -right-10 rounded-3xl box_shadow  border-white bg-gradient-to-r from-[#7cf535] to-[#2bdfbc] -rotate-45">
+              <div className="absolute md:top-[40%] lg:right-[-280px] lg:h-44 lg:w-72 w-28 lg:top-[90%] top-[90%] h-16 -right-10 rounded-3xl box_shadow  border-white bg-gradient-to-r from-[#7cf535] to-[#2bdfbc] -rotate-45">
                 <img src={HeroImg5} className="rotate-90" alt="" srcset="" />
               </div>
               <div className="mt-4 md:mt-6"> 
