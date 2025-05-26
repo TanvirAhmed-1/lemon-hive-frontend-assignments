@@ -6,6 +6,7 @@ import MeetTheCast from "./MeetTheCast";
 import App from "../../App";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
+
 const Home = () => {
   return (
     <div>
@@ -30,6 +31,7 @@ const Home = () => {
           <section>
             <Location></Location>
           </section>
+          <App></App>
         </div>
       </div>
     </div>

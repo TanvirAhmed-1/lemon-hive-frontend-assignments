@@ -22,14 +22,14 @@ const Hero = () => {
         </div>
 
         <div className="hero-content text-neutral-content text-center">
-          <div className="w-full">
-            <div className=" relative mb-5  text-[100px] font-bold uppercase gap-5">
+          <div className="w-full overflow-hidden">
+            <div className=" relative mb-5    text-5xl lg:text-[100px] font-bold uppercase gap-5">
               <div className="flex gap-x-3 justify-center text_style items-center relative ">
                 <p> The</p>
                 <span>
                   {" "}
                   <img
-                    className="object-cover w-40"
+                    className="object-cover lg:w-40"
                     src={HeroImg2}
                     alt=""
                     srcset=""
@@ -44,26 +44,28 @@ const Hero = () => {
                   <img src={HeroImg4} className="w-full" alt="" srcset="" />
                 </div>
               </div>
-              <div className="absolute top-[40%] right-[-290px] h-44 w-72 rounded-3xl box_shadow  border-white bg-gradient-to-r from-[#7cf535] to-[#2bdfbc] -rotate-45">
+              <div className="absolute md:top-[40%] lg:right-[-290px] lg:h-44 lg:w-72 w-28 top-[90%] h-16 -right-10 rounded-3xl box_shadow  border-white bg-gradient-to-r from-[#7cf535] to-[#2bdfbc] -rotate-45">
                 <img src={HeroImg5} className="rotate-90" alt="" srcset="" />
               </div>
-              <span className="text-green-400">morty </span> wiki
+              <div className="mt-4 md:mt-0"> 
+                <span className="text-green-400">morty </span> wiki
+              </div>
             </div>
 
-            <div className="flex items-center justify-center gap-6">
-              <button className="flex justify-center items-center gap-x-2 bg-gradient-to-r text-white from-[#7cf535] to-[#2bdfbc] hover:from-green-500 hover:to-cyan-500 font-bold px-8 py-2 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform ">
-                <IoPlayCircleOutline className="" /> Watch Now
-              </button>
-              <p className=" text-sm font-normal md:text-sm max-w-96 text-start text-[#14d2de]">
+            <div className="md:flex  flex-row-reverse items-center justify-center gap-6">
+              <p className=" text-sm my-6 pt-10 font-normal md:text-sm max-w-96 text-start text-[#14d2de]">
                 Brilliant but boozy scientist Rick hijacks his fretful teenage
                 grandson, Morty, for wild escapades in other worlds and
                 alternate dimensions.
               </p>
+              <button className="flex justify-center items-center gap-x-2 bg-gradient-to-r text-white from-[#7cf535] to-[#2bdfbc] hover:from-green-500 hover:to-cyan-500 font-bold px-8 py-2 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform ">
+                <IoPlayCircleOutline className="" /> Watch Now
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <section className="-mt-36">
+      <section className="-mt-36 w-11/12 mx-auto">
         <MeetTheCast></MeetTheCast>
       </section>
     </div>

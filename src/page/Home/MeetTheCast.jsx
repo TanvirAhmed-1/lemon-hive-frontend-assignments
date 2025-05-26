@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ImageSlider from "../../Hook/Imageslider";
+import { Link } from "react-router-dom";
 
 
 const MeetTheCast = () => {
@@ -15,7 +16,10 @@ const MeetTheCast = () => {
     console.log("image",data)
     return (
         <div className="8/12 mx-auto">
-            <h1 className="text-xl text-white font-medium pb-10">Meet The Cast</h1>
+          <div className="flex justify-between items-center">
+              <h1 className="text-xl text-white font-medium pb-10">Meet The Cast</h1>
+            <Link to={"/AllCharacters"} className="px-6 py-1 text-white rounded-lg border-[#7cf535] border-2 border-solid ">View All</Link>
+          </div>
             <div>
              <ImageSlider data={data}></ImageSlider>
             </div>
