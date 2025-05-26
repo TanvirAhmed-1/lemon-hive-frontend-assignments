@@ -2,17 +2,24 @@ import { useEffect, useState } from "react";
 import HeroImg from "../assets/Hero Img/hero1.png";
 import Img2 from "../assets/Hero Img/Logo.png";
 import { Link } from "react-router-dom";
+import LoadingPage from "./LoadingPage";
 
 const AllCharacter = () => {
   const [data, setData] = useState([]);
+  const[loading, setLoading]=useState(false)
   useEffect(() => {
+    setLoading(true)
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
-      .then((result) => setData(result.results))
+      .then((result) => {setData(result.results)
+        setLoading(false)
+      })
       .then((err) => {
         console.log(err.message);
       });
   }, []);
+
+   if (loading) return <LoadingPage></LoadingPage>;
   return (
     <div>
       <div>

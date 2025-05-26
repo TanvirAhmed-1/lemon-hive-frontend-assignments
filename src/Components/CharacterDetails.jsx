@@ -7,23 +7,29 @@ import { CgGenderMale } from "react-icons/cg";
 import { IoEarthSharp } from "react-icons/io5";
 import { MdAddLocationAlt, MdOpenInNew } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
+import LoadingPage from "./LoadingPage";
 
 const CharacterDetails = () => {
+
   const [data, setData] = useState(null);
   const { id } = useParams();
+  const[loading, setLoading]=useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((res) => res.json())
-      .then((result) => setData(result))
+      .then((result) =>{ setData(result)
+        setLoading(false)
+      })
       .catch((err) => {
-        console.error("Fetch error:", err.message);
+        console.error( err.message);
       });
   }, [id]);
 
-  console.log(data);
 
-  if (!data) return <div className="text-white p-10">Loading...</div>;
+  if (loading) return <LoadingPage></LoadingPage>;
+    if (!data) return <div className="flex justify-center items-center">Loading-----</div>;
 
   return (
     <div>
@@ -42,13 +48,13 @@ const CharacterDetails = () => {
           <div className="relative z-10 pt-60 md:flex  justify-center items-center lg:gap-20 md:gap-10">
             <div>
               <h1 className="text-3xl text-center text-sky-500 mb-5 font-bold">
-                {data.name}
+                {data?.name}
               </h1>
               <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[3px] rounded-3xl w-full max-w-xs mx-auto">
                 <div className="bg-[#1e1f26] rounded-3xl p-4 sm:p-6 md:p-8 text-white text-center">
                   <img
-                    src={data.image}
-                    alt={data.name}
+                    src={data?.image}
+                    alt={data?.name}
                     className="mx-auto mb-4 w-full h-auto rounded-xl object-cover"
                   />
                 </div>
@@ -102,13 +108,13 @@ const CharacterDetails = () => {
                     </p>
                     <div className="flex justify-between items-center">
                       <h1 className="text-white text-lg md:text-3xl">{data.species}</h1>
-                      <MdOpenInNew className="text-xl lg:text-6xl text-white" />
+                      <MdOpenInNew className="text-xl  text-white" />
                     </div>
                   </div>
                 </div>
                 <div className="bg-gradient-to-r from-[#1a749b] to-[#5db440] p-[2px] rounded-xl md:rounded-3xl">
                   <div className="bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
-                    <MdAddLocationAlt className="text-4xl text-[#5db440]" />
+                    <MdAddLocationAlt className="text-4xl lg:text-5xl text-[#5db440]" />
                     <p className="text-sm md:text-xl text-start py-2 text-gray-500">
                       Last Known Location
                     </p>
@@ -116,14 +122,14 @@ const CharacterDetails = () => {
                       <h1 className="text-white text-lg md:text-3xl">
                         {data?.location?.name}
                       </h1>
-                      <MdOpenInNew className="text-xl lg:text-6xl text-white" />
+                      <MdOpenInNew className="text-xl  text-white" />
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r overflow-auto whitespace-pre from-[#1a749b] to-[#5db440] p-[2px] max-h-[300px]  rounded-xl md:rounded-3xl">
                   <div className="bg-[#1e1f26] rounded-xl md:rounded-3xl p-4 text-white w-full">
-                    <FaBars className="text-4xl text-[#5db440]" />
+                    <FaBars className="text-4xl lg:text-5xl text-[#5db440]" />
                     <p className="text-xl md:text-xl py-5 text-start  text-gray-500">
                       Episode ({data.episode.length})
                     </p>
